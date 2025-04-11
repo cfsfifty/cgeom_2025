@@ -1,0 +1,10 @@
+^C:\USERS\CFUEN\SOURCE\COMPUTATIONGEOMETRY_2025\GITHUB\CGEOM_2025\LIB\WIN64\FREEGLUT-3.6.0\BUILD\CMAKEFILES\0904D29679C5B162604C5BA1B85EEC2C\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0 -BC:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/build/freeglut.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

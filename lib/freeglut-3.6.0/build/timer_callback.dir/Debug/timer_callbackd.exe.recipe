@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\x64\Debug\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\bin\Debug\freeglutd.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\bin\Debug\timer_callbackd.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

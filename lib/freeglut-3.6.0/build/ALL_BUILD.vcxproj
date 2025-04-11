@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4ED21564-6024-3B23-B4FC-EB26937C8F70}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\src;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\include;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\src;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\include;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\src;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\include;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\src;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\include;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0 -BC:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/build --check-stamp-file C:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.15\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\FreeGLUTConfig.cmake.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\3.15.3\CMakeCCompiler.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\3.15.3\CMakeRCCompiler.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\3.15.3\CMakeSystem.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\config.h.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\freeglut.pc.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\freeglut.rc.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\src\fg_version.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0 -BC:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/build --check-stamp-file C:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.15\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\FreeGLUTConfig.cmake.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\3.15.3\CMakeCCompiler.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\3.15.3\CMakeRCCompiler.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\3.15.3\CMakeSystem.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\config.h.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\freeglut.pc.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\freeglut.rc.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\src\fg_version.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0 -BC:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/build --check-stamp-file C:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.15\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\FreeGLUTConfig.cmake.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\3.15.3\CMakeCCompiler.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\3.15.3\CMakeRCCompiler.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\3.15.3\CMakeSystem.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\config.h.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\freeglut.pc.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\freeglut.rc.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\src\fg_version.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0 -BC:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/build --check-stamp-file C:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.15\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\FreeGLUTConfig.cmake.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\3.15.3\CMakeCCompiler.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\3.15.3\CMakeRCCompiler.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\3.15.3\CMakeSystem.cmake;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\config.h.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\freeglut.pc.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\freeglut.rc.in;C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\src\fg_version.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\ZERO_CHECK.vcxproj">
+      <Project>{AF74AE6A-C36E-376D-AF1D-F051EA1C57B9}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\3dview.vcxproj">
+      <Project>{776ACF07-1446-3856-9425-B13F8EA4F2BD}</Project>
+      <Name>3dview</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\3dview_static.vcxproj">
+      <Project>{5E85DC9D-8466-3998-8FCB-6F11A0FF804F}</Project>
+      <Name>3dview_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CallbackMaker.vcxproj">
+      <Project>{095961CE-5FE6-3B05-A9ED-7472C168F591}</Project>
+      <Name>CallbackMaker</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CallbackMaker_static.vcxproj">
+      <Project>{E00AE46B-F8B2-38E5-AA16-F8378066DA91}</Project>
+      <Name>CallbackMaker_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\Fractals.vcxproj">
+      <Project>{2C49CABE-37F6-3936-974F-202683C65A51}</Project>
+      <Name>Fractals</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\Fractals_random.vcxproj">
+      <Project>{6550E71F-2E34-3A28-93B3-55A60C74F21F}</Project>
+      <Name>Fractals_random</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\Fractals_random_static.vcxproj">
+      <Project>{8726B4D5-7AC8-38A9-866A-98FF40CD709B}</Project>
+      <Name>Fractals_random_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\Fractals_static.vcxproj">
+      <Project>{1738F946-E753-3767-A6BA-DAB14A303445}</Project>
+      <Name>Fractals_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\Lorenz.vcxproj">
+      <Project>{F13CE479-C56B-321D-9F46-848492930D39}</Project>
+      <Name>Lorenz</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\Lorenz_static.vcxproj">
+      <Project>{FF6C2655-47D9-3CEF-8DDA-A52AEA3AD9F2}</Project>
+      <Name>Lorenz_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\One.vcxproj">
+      <Project>{9B61972C-A0AE-3C56-8B91-2592B5634636}</Project>
+      <Name>One</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\One_static.vcxproj">
+      <Project>{B4EA2729-9C92-33D3-8744-0CD348FF2F93}</Project>
+      <Name>One_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\freeglut.vcxproj">
+      <Project>{DE84C0DB-ACBD-37DA-B22A-5F7D04270B51}</Project>
+      <Name>freeglut</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\freeglut_static.vcxproj">
+      <Project>{F504F080-9585-3656-999E-05241C1E1195}</Project>
+      <Name>freeglut_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\indexed_color.vcxproj">
+      <Project>{DD92AB2F-1D8B-3F44-A7A0-A9AC21B7F792}</Project>
+      <Name>indexed_color</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\indexed_color_static.vcxproj">
+      <Project>{70847F72-9382-3293-80A5-096A77B515C7}</Project>
+      <Name>indexed_color_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\joystick.vcxproj">
+      <Project>{CE5832B2-B237-3B0A-8C25-72E0814666E0}</Project>
+      <Name>joystick</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\joystick_static.vcxproj">
+      <Project>{A1E3F8D5-A2C0-32A6-8159-C6EEFDFDA4CE}</Project>
+      <Name>joystick_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\keyboard.vcxproj">
+      <Project>{C74476B8-EA9A-3410-A348-54DB4B909D37}</Project>
+      <Name>keyboard</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\keyboard_static.vcxproj">
+      <Project>{261C9738-0771-3231-9205-4E4A30CF3C60}</Project>
+      <Name>keyboard_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\multi-touch.vcxproj">
+      <Project>{EEDD55AF-DA47-307C-8DA1-C0FFE5131BB3}</Project>
+      <Name>multi-touch</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\multi-touch_static.vcxproj">
+      <Project>{B2424753-9CEB-3400-B871-F4C142BC8C09}</Project>
+      <Name>multi-touch_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\resizer.vcxproj">
+      <Project>{8B6A2A94-2382-3809-8BF7-85A7E91F8834}</Project>
+      <Name>resizer</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\resizer_static.vcxproj">
+      <Project>{3690066E-3D09-3278-A05A-727AE2B1E3EC}</Project>
+      <Name>resizer_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\shapes.vcxproj">
+      <Project>{556ECF26-3F12-37AF-8D82-CBA6F7893EB2}</Project>
+      <Name>shapes</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\shapes_static.vcxproj">
+      <Project>{70E0A5D3-5E33-33BB-9334-568F3F9F2B95}</Project>
+      <Name>shapes_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\smooth_opengl3.vcxproj">
+      <Project>{B418E0E5-0727-39AB-9ACD-FEF8112CEDE3}</Project>
+      <Name>smooth_opengl3</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\smooth_opengl3_static.vcxproj">
+      <Project>{AB2A4862-A40D-3E00-8EEE-C28453A45C04}</Project>
+      <Name>smooth_opengl3_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\spaceball.vcxproj">
+      <Project>{16FCCBC1-8BBF-3F0B-915D-94DED6E27FBD}</Project>
+      <Name>spaceball</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\spaceball_static.vcxproj">
+      <Project>{B6E5D2DB-2015-3C8B-9A2F-5CE232F3FF3D}</Project>
+      <Name>spaceball_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\subwin.vcxproj">
+      <Project>{E0864B7D-8AF3-382D-9E8B-81AF9509811C}</Project>
+      <Name>subwin</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\subwin_static.vcxproj">
+      <Project>{D647DD82-2198-3B1A-9102-24DCA38588A2}</Project>
+      <Name>subwin_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\timer.vcxproj">
+      <Project>{02CCFC1F-AA1D-335D-B85F-5EC6756512E0}</Project>
+      <Name>timer</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\timer_callback.vcxproj">
+      <Project>{3F3F0B0E-FF25-3956-9BEA-256D4D5A6B11}</Project>
+      <Name>timer_callback</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\timer_callback_static.vcxproj">
+      <Project>{4436FA20-79C9-3CA4-8576-EF849C46EBFA}</Project>
+      <Name>timer_callback_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\timer_static.vcxproj">
+      <Project>{AF90DF77-7C45-35C2-9178-8CF04600FA91}</Project>
+      <Name>timer_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

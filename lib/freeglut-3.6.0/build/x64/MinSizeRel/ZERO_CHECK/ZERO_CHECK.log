@@ -1,0 +1,9 @@
+﻿  Checking Build System
+  CMake is re-running because C:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/build/CMakeFiles/generate.stamp is out-of-date.
+    the file 'C:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/CMakeLists.txt'
+    is newer than 'C:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/build/CMakeFiles/generate.stamp.depend'
+    result='-1'
+  -- Selecting Windows SDK version 10.0.22621.0 to target Windows 10.0.19045.
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: C:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/build

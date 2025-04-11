@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\CMakeFiles\0904d29679c5b162604c5ba1b85eec2c\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{D9FFA829-E549-3EFA-B1CB-B0EBA45DC418}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

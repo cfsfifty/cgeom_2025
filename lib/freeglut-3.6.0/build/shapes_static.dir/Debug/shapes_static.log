@@ -1,0 +1,5 @@
+﻿  Building Custom Rule C:/Users/cfuen/source/ComputationGeometry_2025/github/cgeom_2025/lib/win64/freeglut-3.6.0/CMakeLists.txt
+  shapes.c
+  glmatrix.c
+  Generating Code...
+  shapes_static.vcxproj -> C:\Users\cfuen\source\ComputationGeometry_2025\github\cgeom_2025\lib\win64\freeglut-3.6.0\build\bin\Debug\shapes_staticd.exe
