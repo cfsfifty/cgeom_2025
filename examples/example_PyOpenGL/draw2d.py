@@ -6,7 +6,7 @@ from OpenGL.GLU import *
 from OpenGL.GLUT import *
 from math import *
 import FileObj
-import sys
+import random
  
 # Global variables
 title        = b"Polygon" # Windowed mode's title
@@ -27,37 +27,38 @@ stateGL = [ -1 ]
 # Initialize OpenGL Graphics 
 def initGL():
 	glClearColor(0.0, 0.0, 0.0, 1.0) # Set background (clear) color to black
+	# for polygonal types, not line types
+	glFrontFace  (GL_CCW) # this is the default 
+	glPolygonMode(GL_FRONT, GL_FILL) # front face (Vorderseite)
+	glPolygonMode(GL_BACK,  GL_LINE) # back  face (Rückseite)
+
+def drawGeometry():
+	# Outline polygon
+	glLineWidth(2.0)
+	glBegin(GL_LINE_LOOP)
+	glColor3f  (1.0, 0.0, 0.0)  # Red
+	for poly_point in state.getPolygon(): # Last vertex same as first vertex
+		#glColor3f  (random.random(), random.random(), random.random())  # Red
+		glVertex2fv(poly_point)
+	glEnd()
 
 # Callback handler for window re-paint event
 def display():
 	glClear     (GL_COLOR_BUFFER_BIT) # Clear the color buffer
 	glMatrixMode(GL_MODELVIEW)   # To operate on the model-view matrix
 	glLoadIdentity()             # Reset model-view matrix
-	
-	# Use triangular segments to form a circle
-	glLineWidth(2.0)
-	glBegin(GL_LINE_LOOP)
-	glColor3f  (1.0, 0.0, 0.0)  # Red
-	for poly_point in state.getPolygon(): # Last vertex same as first vertex
-		glVertex2fv(poly_point)
-	glEnd()
+	drawGeometry()
 	glutSwapBuffers()  # Swap front and back buffers (of double buffered mode)
 # Callback handler for window re-paint event, using display lists
 def displayDisplayList():
 	glClear     (GL_COLOR_BUFFER_BIT) # Clear the color buffer
 	glMatrixMode(GL_MODELVIEW)   # To operate on the model-view matrix
 	glLoadIdentity()             # Reset model-view matrix
-	if stateGL[0] < 0:
+	if stateGL[0] < 0: # not compiled, then compile and execute
 		glNewList(stateGL[0], GL_COMPILE_AND_EXECUTE)
-		# Use triangular segments to form a circle
-		glLineWidth(2.0)
-		glBegin(GL_LINE_LOOP)
-		glColor3f  (1.0, 0.0, 0.0)  # Red
-		for poly_point in state.getPolygon(): # Last vertex same as first vertex
-			glVertex2fv(poly_point)
-		glEnd()
+		drawGeometry()
 		glEndList()
-	else:
+	else: # execute display-list
 		glCallList(stateGL[0])
 	glutSwapBuffers()  # Swap front and back buffers (of double buffered mode)
  
@@ -97,13 +98,13 @@ def main():
 
 	glutInit(sys.argv)             # Initialize GLUT
 	glutInitDisplayMode(GLUT_DOUBLE) # Enable double buffered mode
-	glutInitWindowSize(windowWidth, windowHeight)  # Initial window width and height
-	glutInitWindowPosition(windowPosX, windowPosY) # Initial window top-left corner (x, y)
+	glutInitWindowSize (windowWidth, windowHeight)  # Initial window width and height
+	glutInitWindowPosition(windowPosX, windowPosY)  # Initial window top-left corner (x, y)
 	glutCreateWindow(title)       # Create window with given title
-	glutDisplayFunc(displayDisplayList)      # Register callback handler for window re-paint
 	glutReshapeFunc(reshape)      # Register callback handler for window re-shape
+	glutDisplayFunc(display)      # Register callback handler for window re-paint
+	#glutIdleFunc(display)         # Register callback handler for window idling: redisplay
 	#glutTimerFunc(0, Timer, 0)    # First timer call immediately
-	glutIdleFunc(display)         # Register callback handler for window idling: redisplay
 	
 	initGL()                      # Our own OpenGL initialization
 	glutMainLoop()                # Enter event-processing loop
