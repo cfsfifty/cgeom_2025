@@ -2,7 +2,7 @@
 
 # nrw.obj
 
-World maps (WGS84 or Mercator)<br> 
+World maps (WGS84 map or Mercator projection)<br> 
 https://osmdata.openstreetmap.de/data/land-polygons.html
 
 Warum alle Weltkarten falsch sind (Gauss Theorema Egregium)<br>
