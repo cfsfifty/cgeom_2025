@@ -1,11 +1,11 @@
-# examples
+# Data sets for examples 
 
 # nrw.obj
 
 WGS84 maps or Mercator maps<br> 
 https://osmdata.openstreetmap.de/data/land-polygons.html
 
-Warum alle Welkarten falsch sind (Gauss Theorema Egregium)
+Warum alle Welkarten falsch sind (Gauss Theorema Egregium)<br>
 https://www.youtube.com/watch?v=kIID5FDi2JQ&t=194s
 
 German Bundeslaender (WGS84 map used by GPS, converted into text file via QGIS)<br>
