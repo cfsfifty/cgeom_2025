@@ -23,8 +23,9 @@ https://pypi.org/project/PyOpenGL-accelerate/
 https://de.wikipedia.org/wiki/Scalable_Vector_Graphics
 
 # OpenGL with Visual C++ or g++
-see examples/example_cpp/CMakeFile.txt
+see examples/example_cpp/CMakeLists.txt
 
+OpenGL compatibility mode<br>
 https://www.songho.ca/opengl/index.html
 
 
