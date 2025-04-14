@@ -17,17 +17,20 @@ class FileObj:
         self.x        = [ math.inf, -math.inf]
         self.y        = [ math.inf, -math.inf]
         with open(self.filename, 'r') as file:
+            num_line = 0
             while file:
-                line     = file.readline()
-                if not line:
+                line      = file.readline()
+                num_line += 1
+                print(line)
+                if not line: # line==None, so end-of-file
                     break
                 #print(line)
-                elements = line.split()
+                elements = line.split(sep=None)
                 #print(elements)
+                if len(elements) < 1 or elements[0] == "#": # skip empty line or comment line
+                    continue 
 
                 assert(len(elements) >= 1)
-                if elements[0] == "#": # skip comment line
-                    continue 
                 if elements[0] == "v":
                     assert(2 <= len(elements) and len(elements) <= 4)
                     if len(elements) == 2: # 1d
@@ -43,6 +46,9 @@ class FileObj:
                     self.points.append(coord)
                     continue
                 if elements[0] == "f":
+                    if len(self.indices) > 0:
+                        print("WARNING: skipped additional face in line", num_line)
+                        self.indices.clear() # clear list with each tag 'f', so only last face persists
                     for i in range(1, len(elements)): 
                         # indices in OBJ are 1 based
                         self.indices.append(int(elements[i])-1)
