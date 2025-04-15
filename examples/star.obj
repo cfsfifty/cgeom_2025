@@ -5,6 +5,6 @@ v   0.8 -0.4
 v  -0.8 -0.4
 v   0.5  0.8
 # cw
-f   1 2 3 4 5
-# ccw is valid (last f tag)
+#f   1 2 3 4 5
+# ccw
 f   1 5 4 3 2 
