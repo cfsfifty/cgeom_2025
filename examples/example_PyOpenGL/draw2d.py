@@ -40,9 +40,6 @@ def drawGeometry():
 	#glBegin(GL_LINE_LOOP)
 	poly = state.getPolygon()
 	glColor3f  (1.0, 0.0, 0.0)  # Red
-	#glVertex2fv(poly[0])
-	#glVertex2fv(poly[2])
-	#glVertex2fv(poly[3])
 	for poly_point in poly: # Last vertex same as first vertex
 		#glColor3f  (random.random(), random.random(), random.random())  # Red
 		glVertex2fv(poly_point)
@@ -51,7 +48,7 @@ def drawGeometry():
 # Callback handler for window re-paint event
 def display():
 	glClear     (GL_COLOR_BUFFER_BIT) # Clear the color buffer
-	center_x = 0.5*(state.x[1] + state.x[0]) # move to "state"
+	center_x = 0.5*(state.x[1] + state.x[0]) # refactor: move to "state"
 	center_y = 0.5*(state.y[1] + state.y[0])
 	print("model-center", center_x, center_y)
 	glMatrixMode(GL_MODELVIEW)  # To operate on the ModelView matrix
@@ -64,7 +61,7 @@ def display():
 # Callback handler for window re-paint event, using display lists
 def displayDisplayList():
 	glClear     (GL_COLOR_BUFFER_BIT) # Clear the color buffer
-	center_x = 0.5*(state.x[1] + state.x[0]) # move to "state"
+	center_x = 0.5*(state.x[1] + state.x[0]) # refactor: move to "state"
 	center_y = 0.5*(state.y[1] + state.y[0])
 	print("model-center", center_x, center_y)
 	glMatrixMode(GL_MODELVIEW)  # To operate on the ModelView matrix
@@ -91,7 +88,7 @@ def reshape(width, height):
 	# Set the aspect ratio of the clipping area to match the viewport
 	glMatrixMode(GL_PROJECTION)  # To operate on the Projection matrix
 	glLoadIdentity()             # Reset the projection matrix
-	size_x = 0.5*(state.x[1] - state.x[0]) # move to "state"
+	size_x = 0.5*(state.x[1] - state.x[0]) # refactor: move to "state"
 	size_y = 0.5*(state.y[1] - state.y[0])
 	size   = max(size_x, size_y)
 	if width >= height:
@@ -112,9 +109,8 @@ def reshape(width, height):
  
 # Main function: GLUT runs as a console application starting at main() */
 def main():
-	#state.read("../star.obj")
-	state.read("../nrw.obj")
-
+	state.read("../star.obj")
+	#state.read("../nrw.obj")
 
 	glutInit(sys.argv)             # Initialize GLUT
 	glutInitDisplayMode(GLUT_DOUBLE) # Enable double buffered mode
