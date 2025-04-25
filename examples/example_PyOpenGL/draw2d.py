@@ -26,7 +26,14 @@ stateGL = [ -1 ]
 
 # Initialize OpenGL Graphics 
 def initGL():
-	glClearColor(0.0, 0.0, 0.0, 1.0) # Set background (clear) color to black
+	glClearColor(1.0, 1.0, 1.0, 1.0) # Set background (clear) color to black
+
+	center_x = 0.5*(state.x[1] + state.x[0])
+	center_y = 0.5*(state.y[1] + state.y[0])
+	glMatrixMode(GL_MODELVIEW)  # To operate on the ModelView matrix
+	glLoadIdentity()
+	glTranslatef(-center_x, -center_y, 0.0)
+
 	# for polygonal types, not line types
 	glFrontFace  (GL_CCW) # this is the default 
 	glPolygonMode(GL_FRONT, GL_FILL) # front face (Vorderseite)
@@ -35,9 +42,14 @@ def initGL():
 def drawGeometry():
 	# Outline polygon
 	glLineWidth(2.0)
-	glBegin(GL_LINE_LOOP)
+	glBegin(GL_TRIANGLE_FAN)
+	#glBegin(GL_LINE_LOOP)
+	poly = state.getPolygon()
 	glColor3f  (1.0, 0.0, 0.0)  # Red
-	for poly_point in state.getPolygon(): # Last vertex same as first vertex
+	#glVertex2fv(poly[0])
+	#glVertex2fv(poly[2])
+	#glVertex2fv(poly[3])
+	for poly_point in poly: # Last vertex same as first vertex
 		#glColor3f  (random.random(), random.random(), random.random())  # Red
 		glVertex2fv(poly_point)
 	glEnd()
@@ -47,13 +59,16 @@ def display():
 	glClear     (GL_COLOR_BUFFER_BIT) # Clear the color buffer
 	glMatrixMode(GL_MODELVIEW)   # To operate on the model-view matrix
 	glLoadIdentity()             # Reset model-view matrix
+
 	drawGeometry()
 	glutSwapBuffers()  # Swap front and back buffers (of double buffered mode)
+
 # Callback handler for window re-paint event, using display lists
 def displayDisplayList():
 	glClear     (GL_COLOR_BUFFER_BIT) # Clear the color buffer
 	glMatrixMode(GL_MODELVIEW)   # To operate on the model-view matrix
 	glLoadIdentity()             # Reset model-view matrix
+
 	if stateGL[0] < 0: # not compiled, then compile and execute
 		glNewList(stateGL[0], GL_COMPILE_AND_EXECUTE)
 		drawGeometry()
@@ -74,16 +89,19 @@ def reshape(width, height):
 	# Set the aspect ratio of the clipping area to match the viewport
 	glMatrixMode(GL_PROJECTION)  # To operate on the Projection matrix
 	glLoadIdentity()             # Reset the projection matrix
+	size_x = state.x[1] - state.x[0]
+	size_y = state.y[1] - state.y[0]
+	scale  = max(size_x, size_y)
 	if width >= height:
-		clipAreaXLeft   = state.x[0] #* aspect
-		clipAreaXRight  = state.x[1] #* aspect
-		clipAreaYBottom = state.y[0]
-		clipAreaYTop    = state.y[1]
+		clipAreaXLeft   = -0.5*scale * aspect
+		clipAreaXRight  =  0.5*scale * aspect
+		clipAreaYBottom = -0.5*scale
+		clipAreaYTop    =  0.5*scale
 	else:
-		clipAreaXLeft   = state.x[0]
-		clipAreaXRight  = state.x[1]
-		clipAreaYBottom = state.y[0] #/ aspect
-		clipAreaYTop    = state.y[1] #/ aspect
+		clipAreaXLeft   = -0.5*scale
+		clipAreaXRight  =  0.5*scale
+		clipAreaYBottom = -0.5*scale / aspect
+		clipAreaYTop    =  0.5*scale / aspect
 	gluOrtho2D(clipAreaXLeft, clipAreaXRight, clipAreaYBottom, clipAreaYTop)
  
 # Called back when the timer expired 
@@ -92,8 +110,8 @@ def reshape(width, height):
  
 # Main function: GLUT runs as a console application starting at main() */
 def main():
-	#state.read("../star.obj")
-	state.read("../nrw.obj")
+	state.read("../starBackside.obj")
+	#state.read("../nrw.obj")
 
 
 	glutInit(sys.argv)             # Initialize GLUT
