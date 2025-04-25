@@ -51,7 +51,7 @@ def drawGeometry():
 # Callback handler for window re-paint event
 def display():
 	glClear     (GL_COLOR_BUFFER_BIT) # Clear the color buffer
-	center_x = 0.5*(state.x[1] + state.x[0])
+	center_x = 0.5*(state.x[1] + state.x[0]) # move to "state"
 	center_y = 0.5*(state.y[1] + state.y[0])
 	print("model-center", center_x, center_y)
 	glMatrixMode(GL_MODELVIEW)  # To operate on the ModelView matrix
@@ -64,7 +64,7 @@ def display():
 # Callback handler for window re-paint event, using display lists
 def displayDisplayList():
 	glClear     (GL_COLOR_BUFFER_BIT) # Clear the color buffer
-	center_x = 0.5*(state.x[1] + state.x[0])
+	center_x = 0.5*(state.x[1] + state.x[0]) # move to "state"
 	center_y = 0.5*(state.y[1] + state.y[0])
 	print("model-center", center_x, center_y)
 	glMatrixMode(GL_MODELVIEW)  # To operate on the ModelView matrix
@@ -91,7 +91,7 @@ def reshape(width, height):
 	# Set the aspect ratio of the clipping area to match the viewport
 	glMatrixMode(GL_PROJECTION)  # To operate on the Projection matrix
 	glLoadIdentity()             # Reset the projection matrix
-	size_x = 0.5*(state.x[1] - state.x[0])
+	size_x = 0.5*(state.x[1] - state.x[0]) # move to "state"
 	size_y = 0.5*(state.y[1] - state.y[0])
 	size   = max(size_x, size_y)
 	if width >= height:
