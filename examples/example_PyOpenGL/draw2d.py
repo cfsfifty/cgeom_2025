@@ -110,7 +110,7 @@ def reshape(width, height):
  
 # Main function: GLUT runs as a console application starting at main() */
 def main():
-	state.read("../starBackside.obj")
+	state.read("../star.obj")
 	#state.read("../nrw.obj")
 
 
