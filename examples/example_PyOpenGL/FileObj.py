@@ -118,7 +118,7 @@ class FileObj:
         if len(self.indices) == 0: # if no indices, create list from point coords list
             for i in range(len(self.points)):
                 self.indices.append(i) 
-            assert(0 <= min(self.indices) and max(self.indices) < len(self.points))
+        assert(0 <= min(self.indices) and max(self.indices) < len(self.points))
         return self.indices
     
     # List of polygon coords tuples
