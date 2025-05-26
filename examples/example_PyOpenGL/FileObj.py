@@ -18,10 +18,10 @@ class FileObj:
             coord = self.points[idx]
             self.x[0] = min(self.x[0], coord[0])
             self.x[1] = max(self.x[1], coord[0])
-            if len(coord) == 2:
+            if len(coord) >= 2:
                 self.y[0] = min(self.y[0], coord[1])
                 self.y[1] = max(self.y[1], coord[1])
-            if len(coord) == 3:
+            if len(coord) >= 3:
                 self.z[0] = min(self.z[0], coord[2])
                 self.z[1] = max(self.z[1], coord[2])
 
