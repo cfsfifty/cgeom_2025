@@ -57,17 +57,19 @@ class FileObj:
                         x = atof(elements[1])
                         coord = (self.dtype(x))    
                     if len(elements) == 3: # 2d
-                        x = atof(elements[1])
-                        y = atof(elements[2])
-                        #x = float(elements[1])
-                        #y = float(elements[2])
+                        #x = atof(elements[1])
+                        #y = atof(elements[2])
+                        x = self.dtype(elements[1])
+                        y = self.dtype(elements[2])
                         coord = (self.dtype(x), self.dtype(y))   
                     if len(elements) == 4: # 3d
-                        x = atof(elements[1])
-                        y = atof(elements[2])
-                        z = atof(elements[3])
+                        #x = atof(elements[1])
+                        #y = atof(elements[2])
+                        #z = atof(elements[3])
+                        x = self.dtype(elements[1])
+                        y = self.dtype(elements[2])
+                        z = self.dtype(elements[3])
                         coord = (self.dtype(x), self.dtype(y), self.dtype(z))    
-                    #print(coord) 
                     self.points.append(coord)
                     continue
                 if elements[0] == "f":
@@ -113,10 +115,10 @@ class FileObj:
     
     # List of indices into PointCoords list
     def getPolygonIndices (self) -> list[int]:
-        if len(self.indices) == 0:
+        if len(self.indices) == 0: # if no indices, create list from point coords list
             for i in range(len(self.points)):
                 self.indices.append(i) 
-        assert(0 <= min(self.indices) and max(self.indices) < len(self.points))
+            assert(0 <= min(self.indices) and max(self.indices) < len(self.points))
         return self.indices
     
     # List of polygon coords tuples
