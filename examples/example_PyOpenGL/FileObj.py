@@ -55,7 +55,7 @@ class FileObj:
                     print(len(elements))
                     if len(elements) == 2: # 1d
                         x = atof(elements[1])
-                        coord = (x)    
+                        coord = (self.dtype(x))    
                     if len(elements) == 3: # 2d
                         x = atof(elements[1])
                         y = atof(elements[2])
