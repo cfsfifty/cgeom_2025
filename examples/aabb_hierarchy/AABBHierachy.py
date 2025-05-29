@@ -70,9 +70,9 @@ def create_hierarchy (l : int, section : tuple, index_list : list[list], points 
 	# filter other dimensions k+1, k+2
 	filtered  = [ 0 for i in range(section[0], section[1])]
 	left_part = index_list[k][section[0]:median]
-	print(left_part, 
-	   index_list[(k+1)%3][section[0]:section[1]],
-	   index_list[(k+2)%3][section[0]:section[1]])
+	#print(left_part, 
+	#   index_list[(k+1)%3][section[0]:section[1]],
+	#   index_list[(k+2)%3][section[0]:section[1]])
 	for kk in range(3):
 		if kk == k: # k is sorted
 			continue
@@ -81,12 +81,12 @@ def create_hierarchy (l : int, section : tuple, index_list : list[list], points 
 		right = median-section[0]
 		for i in range(section[0], section[1]):
 			if index_list[kk][i] in left_part:
-				print(left, index_list[kk][i], "in", left_part)
+				#print(left, index_list[kk][i], "in", left_part)
 				assert(left < median)
 				filtered[left]  = index_list[kk][i]
 				left += 1
 			else:
-				print(right, index_list[kk][i], "!in", left_part)
+				#print(right, index_list[kk][i], "!in", left_part)
 				assert(right < section[1])
 				filtered[right] = index_list[kk][i]
 				right += 1
@@ -104,6 +104,8 @@ def create_hierarchy (l : int, section : tuple, index_list : list[list], points 
 	return node
 
 def draw_node(l : int,  level : int, node : BinaryNode.BinaryNode):
+	global state
+	model_center = state.model.bbox.center()
 	#print(l, level)
 	if l == level:
 		glDisable(GL_LIGHTING)
@@ -162,7 +164,13 @@ def draw_node(l : int,  level : int, node : BinaryNode.BinaryNode):
 				f = node.indices[i]
 				glBegin(GL_TRIANGLE_FAN)
 				for p in node.faces[f]:
-					glNormal3fv(node.points[p])
+					# normal is only approximate!
+					# also slow, why?
+					normal = [ node.points[p][i] for i in range(3) ]
+					v3.add_inplace  (normal, model_center, -1.0)
+					v3.scale_inplace(normal, 1.0/v3.length(normal))
+
+					glNormal3fv(normal)
 					glVertex3fv(node.points[p])
 				glEnd()
 			return
