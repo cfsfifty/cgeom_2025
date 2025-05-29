@@ -42,7 +42,7 @@ class FileObj3d:
                 #print(line)
                 elements = line.split(sep=None)
                 #print(elements)
-                if len(elements) < 1 or elements[0] == "#": # skip empty line or comment line
+                if len(elements) < 1: # skip empty line
                     continue 
 
                 assert(len(elements) >= 1)
@@ -75,10 +75,6 @@ class FileObj3d:
                         if match:
                             idx = int(match.group(0))-1
                             self.indices[-1].append(idx)
-                    continue
-                if elements[0] == "vt":
-                    continue
-                if elements[0] == "vn":
                     continue
         print("read points", len(self.points), "faces", len(self.indices))
         self.updateBBox()
