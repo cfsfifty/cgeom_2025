@@ -15,10 +15,15 @@ def max_inplace (a, b) -> None:
     a[1] = max(a[1], b[1])
     a[2] = max(a[2], b[2])
 ''' '''
-def add_inplace (a, b) -> None:
-    a[0] += b[0]
-    a[1] += b[1]
-    a[2] += b[2]
+def add_inplace (a, b, s=1.0) -> None:
+    a[0] += s*b[0]
+    a[1] += s*b[1]
+    a[2] += s*b[2]
+''' '''
+def scale_inplace (a, s=1.0) -> None:
+    a[0] *= s
+    a[1] *= s
+    a[2] *= s
 
 ''' '''
 def rotate_y(dir : list[float], start, radian : float):
