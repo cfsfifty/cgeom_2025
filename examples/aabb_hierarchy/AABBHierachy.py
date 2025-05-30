@@ -63,9 +63,9 @@ def create_hierarchy (l : int, section : tuple, index_list : list[list], points 
 
 	# heuristic: which axis?
 	_, k= max((max_side[i], i) for i in range(3))
-	print(section, max_side, k, median)
 	# which subdivision position?
 	median = int(math.ceil((section[0]+section[1])/2))
+	print(section, max_side, k, median)
 
 	#index_list[k][section[0]:median-1]
 	#index_list[k][median:section[1]]
