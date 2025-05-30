@@ -65,7 +65,7 @@ def create_hierarchy (l : int, section : tuple, index_list : list[list], points 
 	_, k= max((max_side[i], i) for i in range(3))
 	# which subdivision position?
 	median = int(math.ceil((section[0]+section[1])/2))
-	print(section, max_side, k, median)
+	print("dim", k, "at position", median, (section[0], median), (median, section[1]))
 
 	#index_list[k][section[0]:median-1]
 	#index_list[k][median:section[1]]
@@ -338,9 +338,14 @@ def main():
 	index_list[2] = copy.deepcopy(index_list[0]) 
 	#print(index_list)
 
-	key_x   = lambda f: face_center(faces[f], points)[0]
-	key_y   = lambda f: face_center(faces[f], points)[1]
-	key_z   = lambda f: face_center(faces[f], points)[2]
+	# compute face centerpoint
+	#key_x   = lambda f: face_center(faces[f], points)[0]
+	#key_y   = lambda f: face_center(faces[f], points)[1]
+	#key_z   = lambda f: face_center(faces[f], points)[2]
+	# randomly take the first point of face
+	key_x   = lambda f: points[faces[f][0]][0]
+	key_y   = lambda f: points[faces[f][0]][1]
+	key_z   = lambda f: points[faces[f][0]][2]
 	index_list[0].sort(key=key_x)
 	index_list[1].sort(key=key_y)
 	index_list[2].sort(key=key_z)
