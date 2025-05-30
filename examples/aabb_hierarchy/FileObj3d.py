@@ -5,26 +5,26 @@ import locale
 from   locale import atof
 import re
 
-''' '''
 class FileObj3d:
-    # 
+    ''' '''
     def __init__(self):
         self.dtype = np.float64
         self.bbox  = AABB.AABB()
 
-    # update from self.indices, self.points
     def updateBBox (self):
+        ''' Update from self.indices, self.points. '''
         coords = list()
         for face in self.indices:
             for idx in face:
                 coords.append(self.points[idx])
         self.bbox.add_coords(coords)
 
-    #
+
     def read (self, filename : str) -> None:
+        ''' '''
         self.readWithType(filename, dtype=float)
-    #
     def readWithType (self, filename : str, dtype : type) -> None:
+        ''' '''
         locale.setlocale(locale.LC_ALL, "en_US.utf8")
         self.dtype    = dtype
         self.points   = list()
@@ -80,6 +80,7 @@ class FileObj3d:
         self.updateBBox()
 
     def writeObj(self, filename : str, points : list[tuple], indices : list[int]) -> None:
+        ''' '''
         # index remapping
         #remap = dict()
         #for id in indices:
@@ -106,15 +107,15 @@ class FileObj3d:
                 f_line = 'f ' + ' '.join(str(id+1) for id in face) + '\n'
                 file.write(f_line)      
 
-    # List of coords tuples of all points read 
     def getPointCoords (self) -> list[tuple]:
+        ''' List of coords tuples of all points read. ''' 
         return self.points
-    # List of index lists 
     def getIndices (self) -> list[list]:
+        ''' List of index lists. ''' 
         return self.indices
     
-    # List of indices into PointCoords list
     def getFaces (self) -> list[int]:
+        ''' List of indices into PointCoords list. '''
         if len(self.indices) == 0:
             self.indices.append(list())
             firstFace = self.indices[0]

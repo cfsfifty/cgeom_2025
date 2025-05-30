@@ -1,5 +1,4 @@
 import math 
-#import numpy as np
 
 class AABB:
     def __init__(self):
