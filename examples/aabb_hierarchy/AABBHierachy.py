@@ -52,7 +52,6 @@ def create_hierarchy (l : int, section : tuple, index_list : list[list], points 
 		state.max_level = max(state.max_level, l)
 		return node
 
-	median = int(math.ceil((section[0]+section[1])/2))
 	# determine subdivision axis k
 	max_side    = [0, 0, 0]
 	key_x       = lambda f: face_center(faces[f], points)[0]
@@ -62,8 +61,11 @@ def create_hierarchy (l : int, section : tuple, index_list : list[list], points 
 	max_side[1] = key_y(index_list[1][section[1]-1])-key_y(index_list[1][section[0]])
 	max_side[2] = key_z(index_list[2][section[1]-1])-key_z(index_list[2][section[0]])
 
+	# heuristic: which axis?
 	_, k= max((max_side[i], i) for i in range(3))
 	print(section, max_side, k, median)
+	# which subdivision position?
+	median = int(math.ceil((section[0]+section[1])/2))
 
 	#index_list[k][section[0]:median-1]
 	#index_list[k][median:section[1]]
@@ -326,7 +328,7 @@ def main():
 
 	# create hierarchy for model
 	print("local directory", os.getcwd())
-	state.model.read("../OBJ_models/icosahedron.obj")
+	state.model.read("../OBJ_models/jet.obj")
 	points = state.model.getPointCoords()
 	faces  = state.model.getFaces()
 
