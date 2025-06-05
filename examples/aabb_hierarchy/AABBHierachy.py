@@ -261,8 +261,8 @@ def key_press(kcode, x, y):
 	global state
 	
 	modstate = glutGetModifiers()
-	if kcode == 27:
-		exit(1)
+	#if kcode == b'\x1b':
+	#	exit(1)
 	if kcode == b'+':
 		state.level = scalar.clamp(state.level+1, 0, state.max_level)
 	if kcode == b'-':
