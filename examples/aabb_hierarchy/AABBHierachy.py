@@ -328,7 +328,7 @@ def main():
 
 	# create hierarchy for model
 	print("local directory", os.getcwd())
-	state.model.read("../OBJ_models/jet.obj")
+	state.model.read("../OBJ_models/icosahedron.obj")
 	points = state.model.getPointCoords()
 	faces  = state.model.getFaces()
 
@@ -339,13 +339,13 @@ def main():
 	#print(index_list)
 
 	# compute face centerpoint
-	#key_x   = lambda f: face_center(faces[f], points)[0]
-	#key_y   = lambda f: face_center(faces[f], points)[1]
-	#key_z   = lambda f: face_center(faces[f], points)[2]
-	# randomly take the first point of face
-	key_x   = lambda f: points[faces[f][0]][0]
-	key_y   = lambda f: points[faces[f][0]][1]
-	key_z   = lambda f: points[faces[f][0]][2]
+	key_x   = lambda f: face_center(faces[f], points)[0]
+	key_y   = lambda f: face_center(faces[f], points)[1]
+	key_z   = lambda f: face_center(faces[f], points)[2]
+	# take the first (random) point of face
+	#key_x   = lambda f: points[faces[f][0]][0]
+	#key_y   = lambda f: points[faces[f][0]][1]
+	#key_z   = lambda f: points[faces[f][0]][2]
 	index_list[0].sort(key=key_x)
 	index_list[1].sort(key=key_y)
 	index_list[2].sort(key=key_z)
