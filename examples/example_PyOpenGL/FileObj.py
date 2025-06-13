@@ -14,16 +14,20 @@ class FileObj:
         self.x = [ self.dtype(math.inf), -self.dtype(math.inf)]
         self.y = [ self.dtype(math.inf), -self.dtype(math.inf)]
         self.z = [ self.dtype(math.inf), -self.dtype(math.inf)]
-        for idx in self.indices:
-            coord = self.points[idx]
-            self.x[0] = min(self.x[0], coord[0])
-            self.x[1] = max(self.x[1], coord[0])
-            if len(coord) >= 2:
-                self.y[0] = min(self.y[0], coord[1])
-                self.y[1] = max(self.y[1], coord[1])
-            if len(coord) >= 3:
-                self.z[0] = min(self.z[0], coord[2])
-                self.z[1] = max(self.z[1], coord[2])
+        for face in self.indices:
+            for idx in face:
+                #print(idx, len(self.points))
+                assert(0 <= idx and idx < len(self.points))
+                coord = self.points[idx]
+                self.x[0] = min(self.x[0], coord[0])
+                self.x[1] = max(self.x[1], coord[0])
+                if len(coord) >= 2:
+                    self.y[0] = min(self.y[0], coord[1])
+                    self.y[1] = max(self.y[1], coord[1])
+                if len(coord) >= 3:
+                    self.z[0] = min(self.z[0], coord[2])
+                    self.z[1] = max(self.z[1], coord[2])
+                #print(self.x, self.y, self.z)
 
     #
     def read (self, filename : str) -> None:
@@ -73,14 +77,13 @@ class FileObj:
                     self.points.append(coord)
                     continue
                 if elements[0] == "f":
-                    if len(self.indices) > 0:
-                        print("WARNING: skipped additional face in line", num_line)
-                        self.indices.clear() # clear list with each tag 'f', so only last face persists
+                    self.indices.append(list())
+                    faceIndices = self.indices[-1]
                     for i in range(1, len(elements)): 
                         # indices in OBJ are 1 based
-                        self.indices.append(int(elements[i])-1)
+                        faceIndices.append(int(elements[i])-1)
                     continue
-        print("read points", len(self.points), "polygon", len(self.indices))
+        print("read points", len(self.points), "faces", len(self.indices))
         self.updateBBox()
 
     def writeObj(self, filename : str, points : list[tuple], indices : list[int]) -> None:
@@ -112,15 +115,22 @@ class FileObj:
     # List of coords tuples of all points read 
     def getPointCoords (self) -> list[tuple]:
         return self.points
+    # List of index lists 
+    def getIndices (self) -> list[list]:
+        return self.indices
     
     # List of indices into PointCoords list
     def getPolygonIndices (self) -> list[int]:
-        if len(self.indices) == 0: # if no indices, create list from point coords list
+        if len(self.indices) == 0:
+            self.indices.append(list())
+        firstFace = self.indices[0]
+        if len(firstFace) == 0: 
+            # if no indices, create list from point coords list
             for i in range(len(self.points)):
-                self.indices.append(i) 
-        assert(0 <= min(self.indices) and max(self.indices) < len(self.points))
-        return self.indices
-    
+                firstFace.append(i) 
+            self.updateBBox()
+        assert(0 <= min(firstFace) and max(firstFace) < len(self.points))
+        return firstFace    
     # List of polygon coords tuples
     def getPolygon (self) -> list[tuple]:
         indices   = self.getPolygonIndices()
