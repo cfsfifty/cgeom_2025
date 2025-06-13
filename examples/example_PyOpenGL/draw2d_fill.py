@@ -26,21 +26,28 @@ stateGL = [ -1 ]
 
 # Initialize OpenGL Graphics 
 def initGL():
-	glClearColor(1.0, 1.0, 1.0, 1.0) # Set background (clear) color to black
-
+	glClearColor(0.0, 0.0, 0.0, 1.0) # Set background (clear) color to black
 	# for polygonal types, not line types
-	glFrontFace  (GL_CW) # GL_CCW is the default 
+	glFrontFace  (GL_CW) # this is the default 
 	glPolygonMode(GL_FRONT, GL_FILL) # front face (Vorderseite)
 	glPolygonMode(GL_BACK,  GL_LINE) # back  face (Rückseite)
 
 def drawGeometry():
 	# Outline polygon
 	glLineWidth(2.0)
+	glBegin(GL_LINE_LOOP)
+	glColor3f  (1.0, 0.0, 0.0)  # Red
+	for poly_point in state.getPolygon(): # Last vertex same as first vertex
+		#glColor3f  (random.random(), random.random(), random.random())  # Red
+		glVertex2fv(poly_point)
+	glEnd()
+def drawGeometryFill():
+	# Outline polygon
+	glLineWidth(2.0)
 	glBegin(GL_TRIANGLE_FAN)
-	#glBegin(GL_LINE_LOOP)
-	poly = state.getPolygon()
-	glColor4f  (1.0, 0.0, 0.0, 0.5)  # Red
-	for poly_point in poly: # Last vertex same as first vertex
+	#glBegin(GL_POLYGON)
+	glColor3f  (1.0, 0.0, 0.0)  # Red
+	for poly_point in state.getPolygon(): # Last vertex same as first vertex
 		#glColor3f  (random.random(), random.random(), random.random())  # Red
 		glVertex2fv(poly_point)
 	glEnd()
@@ -48,29 +55,19 @@ def drawGeometry():
 # Callback handler for window re-paint event
 def display():
 	glClear     (GL_COLOR_BUFFER_BIT) # Clear the color buffer
-	center_x = 0.5*(state.x[0] + state.x[1]) # refactor: move to "state"
-	center_y = 0.5*(state.y[0] + state.y[1])
-	print("model-center", center_x, center_y)
-	glMatrixMode(GL_MODELVIEW)  # To operate on the ModelView matrix
-	glLoadIdentity()
-	glTranslated  (-center_x, -center_y, 0.0)
-
-	drawGeometry()
+	glMatrixMode(GL_MODELVIEW)   # To operate on the model-view matrix
+	glLoadIdentity()             # Reset model-view matrix
+	drawGeometryFill()
 	glutSwapBuffers()  # Swap front and back buffers (of double buffered mode)
 
 # Callback handler for window re-paint event, using display lists
 def displayDisplayList():
 	glClear     (GL_COLOR_BUFFER_BIT) # Clear the color buffer
-	center_x = 0.5*(state.x[1] + state.x[0]) # refactor: move to "state"
-	center_y = 0.5*(state.y[1] + state.y[0])
-	print("model-center", center_x, center_y)
-	glMatrixMode(GL_MODELVIEW)  # To operate on the ModelView matrix
-	glLoadIdentity()
-	glTranslated  (-center_x, -center_y, 0.0)
-
+	glMatrixMode(GL_MODELVIEW)   # To operate on the model-view matrix
+	glLoadIdentity()             # Reset model-view matrix
 	if stateGL[0] < 0: # not compiled, then compile and execute
 		glNewList(stateGL[0], GL_COMPILE_AND_EXECUTE)
-		drawGeometry()
+		drawGeometryFill()
 		glEndList()
 	else: # execute display-list
 		glCallList(stateGL[0])
@@ -88,19 +85,16 @@ def reshape(width, height):
 	# Set the aspect ratio of the clipping area to match the viewport
 	glMatrixMode(GL_PROJECTION)  # To operate on the Projection matrix
 	glLoadIdentity()             # Reset the projection matrix
-	size_x = 0.5*(state.x[1] - state.x[0]) # refactor: move to "state"
-	size_y = 0.5*(state.y[1] - state.y[0])
-	size   = max(size_x, size_y)
 	if width >= height:
-		clipAreaXLeft   = -size * aspect
-		clipAreaXRight  =  size * aspect
-		clipAreaYBottom = -size
-		clipAreaYTop    =  size
+		clipAreaXLeft   = state.x[0] #* aspect
+		clipAreaXRight  = state.x[1] #* aspect
+		clipAreaYBottom = state.y[0]
+		clipAreaYTop    = state.y[1]
 	else:
-		clipAreaXLeft   = -size
-		clipAreaXRight  =  size
-		clipAreaYBottom = -size / aspect
-		clipAreaYTop    =  size / aspect
+		clipAreaXLeft   = state.x[0]
+		clipAreaXRight  = state.x[1]
+		clipAreaYBottom = state.y[0] #/ aspect
+		clipAreaYTop    = state.y[1] #/ aspect
 	gluOrtho2D(clipAreaXLeft, clipAreaXRight, clipAreaYBottom, clipAreaYTop)
  
 # Called back when the timer expired 
@@ -109,10 +103,8 @@ def reshape(width, height):
  
 # Main function: GLUT runs as a console application starting at main() */
 def main():
-	#state.read("../quad.obj")
-	#state.read("../nrw.obj")
-	#state.read("../star2.obj")
-	state.read("../PNonConvexSimple1.obj")
+	#state.read("../star.obj")
+	state.read("../nrw.obj")
 	# call to update self.indices once
 	state.getPolygonIndices()
 
