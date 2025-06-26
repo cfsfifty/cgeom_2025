@@ -89,8 +89,11 @@ class FileObj:
     def writeObj(self, filename : str, points : list[tuple], indices : list[int]) -> None:
         # index remapping
         remap = dict()
-        for id in indices:
-            remap[id] = len(remap)
+        if len(indices) == 1:
+            for id in indices[0]:
+                remap[id] = len(remap)
+        else:
+            remap = { id : id for id in range(len(points)) }
 
         with open(filename, 'w') as file:
             comment = "#" + str(len(points)) + " points," + str(len(indices)) + " indices\n"
@@ -108,9 +111,10 @@ class FileObj:
                     v_line += "\n"  
                     file.write(v_line)        
             # indices are 1 based
-            ids = [ remap[idx] for idx in indices ]
-            f_line = 'f' + ' '.join(str(id+1) for id in ids) + '\n'
-            file.write(f_line)      
+            for ids in indices: 
+                ids = [ remap[idx] for idx in ids ]
+                f_line = 'f ' + ' '.join(str(id+1) for id in ids) + '\n'
+                file.write(f_line)     
 
     # List of coords tuples of all points read 
     def getPointCoords (self) -> list[tuple]:
