@@ -194,9 +194,10 @@ def main():
 	for i in range(num):
 		state.points.append((2.0*math.pi)*random.random())
 	state.points.sort()
+	state.indices.append(list())
 	for i in range(num):
 		state.points[i] = ((radius*math.cos(state.points[i]), radius*math.sin(state.points[i])))
-		state.indices.append(i)
+		state.indices[0].append(i)
 	state.updateBBox()
 	state.writeObj("../../circularPoints20.obj", state.points, state.indices)	
 
