@@ -30,14 +30,14 @@ def initGL():
 
 	# for polygonal types, not line types
 	glFrontFace  (GL_CW) # GL_CCW is the default 
-	glPolygonMode(GL_FRONT, GL_FILL) # front face (Vorderseite)
+	glPolygonMode(GL_FRONT, GL_LINE) # front face (Vorderseite)
 	glPolygonMode(GL_BACK,  GL_LINE) # back  face (Rückseite)
 
 def drawGeometry():
 	# Outline polygon
 	glLineWidth(2.0)
-	glBegin(GL_TRIANGLE_FAN)
-	#glBegin(GL_LINE_LOOP)
+	#glBegin(GL_TRIANGLE_FAN)
+	glBegin(GL_LINE_LOOP)
 	poly = state.getPolygon()
 	glColor4f  (1.0, 0.0, 0.0, 0.5)  # Red
 	for poly_point in poly: # Last vertex same as first vertex
@@ -112,7 +112,7 @@ def main():
 	#state.read("../quad.obj")
 	#state.read("../nrw.obj")
 	#state.read("../star2.obj")
-	state.read("../PNonConvexSimple1.obj")
+	state.read("../PNonConvexSimple2.obj")
 	# call to update self.indices once
 	state.getPolygonIndices()
 
