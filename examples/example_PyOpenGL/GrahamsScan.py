@@ -114,23 +114,26 @@ def reshape(width, height):
 	gluOrtho2D(clipAreaXLeft, clipAreaXRight, clipAreaYBottom, clipAreaYTop)
 
 def rightTurn (p, r, q) -> bool:
+	''' Predicate: rightTurn r wrt. pq. Classification wrt. line strip pq. '''
 	n  = ( -(q[1]-p[1]), (q[0]-p[0]))
 	dr = (  r[0]-p[0],    r[1]-p[1])
 	len = math.sqrt(np.dot(n, n))
 	n  = (n[0]/len, n[1]/len) # normalized
 	#print(type(n[0]))
 	# scalar product <n, dr>
-	return (np.dot(n, dr) >= 0.0)
+	return (np.dot(n, dr) > 0.0)
 
 def rightTurnDet (p, r, q) -> bool:
+	''' Predicate: rightTurn r wrt. pq. Classification wrt. signed volume
+	    of parallelogram (p, r, q, q-(r-p)) . '''
 	eps = np.float64(1e-14)
 	d1  = (r[0]-p[0], r[1]-p[1])
 	d2  = (q[0]-p[0], q[1]-p[1])
 	diag1 =   d1[0]*d2[1] 
 	diag2 = -(d1[1]*d2[0])
-	return (-(diag1+diag2) <= eps)
+	return (-(diag1+diag2) < eps)
 
-def grahamsScan (state : FileObj):
+def grahamsScan (state : FileObj) -> None:
 	p   = state.getPointCoords()
 	idx = state.getPolygonIndices()
 	#print(idx)
@@ -183,7 +186,11 @@ def grahamsScan (state : FileObj):
  
 # Main function: GLUT runs as a console application starting at main() 
 def main():
-	state.readWithType("../grahamsScan2.obj", dtype=np.float32)
+	#state.readWithType("../grahamsScan2.obj", dtype=np.float32)
+	#state.readWithType("../grahamsScanDifficult.obj", dtype=np.float32)
+	# np.float32: CH is line segment (deg 2)
+	state.readWithType("../grahamsScanDifficult.obj", dtype=np.float64)
+	# np.float64, now: CH is triangle (deg 3)
 	grahamsScan(state)
 
 	glutInit(sys.argv)             # Initialize GLUT
